@@ -16,12 +16,12 @@ class _NearbyPageState extends State<NearbyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Restaurants'),
-        backgroundColor: colorPrimary,
-      ),
       body: CustomScrollView(
         slivers: [
+          const SliverAppBar(
+            title: Text('Restaurants'),
+            backgroundColor: colorPrimary,
+          ),
           SliverList(
               delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
