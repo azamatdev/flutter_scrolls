@@ -27,6 +27,28 @@ class _NearbyPageState extends State<NearbyPage> {
             floating: true,
             snap: true,
             expandedHeight: 200.0,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text('Restaurants'),
+              centerTitle: true,
+              collapseMode: CollapseMode.parallax,
+              background: DecoratedBox(
+                position: DecorationPosition.foreground,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.center,
+                    colors: <Color>[
+                      colorPrimary,
+                      Colors.transparent,
+                    ],
+                  ),
+                ),
+                child: Image.asset(
+                  Assets.imagesAppbarPic,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
           ),
           SliverList(
               delegate: SliverChildBuilderDelegate(
