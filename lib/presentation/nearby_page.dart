@@ -20,13 +20,18 @@ class _NearbyPageState extends State<NearbyPage> {
         title: const Text('Restaurants'),
         backgroundColor: colorPrimary,
       ),
-      body: ListView.builder(
-        itemCount: restaurants.length,
-        itemBuilder: (BuildContext context, int index) {
-          return ItemNearby(
-            place: restaurants[index],
-          );
-        },
+      body: CustomScrollView(
+        slivers: [
+          SliverList(
+              delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return ItemNearby(
+                place: restaurants[index],
+              );
+            },
+            childCount: restaurants.length,
+          )),
+        ],
       ),
     );
   }
