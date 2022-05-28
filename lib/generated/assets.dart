@@ -7,10 +7,11 @@ class Assets {
   static const String iconsNearby = 'assets/icons/nearby.svg';
   static const String iconsProfile = 'assets/icons/profile.svg';
   static const String iconsStar = 'assets/icons/star.svg';
-  static const String imagesNearbyIceCream =
-      'assets/images/nearby_ice_cream.png';
+  static const String imagesAppbarPic = 'assets/images/appbar_pic.png';
+  static const String imagesAppbarPicture = 'assets/images/appbar_picture.png';
+  static const String imagesNearbyIceCream = 'assets/images/nearby_ice_cream.png';
   static const String imagesNearbyLunch = 'assets/images/nearby_lunch.png';
-  static const String imagesNearbyStarbucks =
-      'assets/images/nearby_starbucks.png';
+  static const String imagesNearbyStarbucks = 'assets/images/nearby_starbucks.png';
   static const String imagesNearbySushi = 'assets/images/nearby_sushi.png';
+
 }

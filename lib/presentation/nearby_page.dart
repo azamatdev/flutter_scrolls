@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_scrolls/generated/assets.dart';
 import 'package:flutter_scrolls/model/server.dart';
 import 'package:flutter_scrolls/presentation/item_nearby.dart';
 import 'package:flutter_scrolls/utils/colors.dart';
+import 'package:sizer/sizer.dart';
 
 class NearbyPage extends StatefulWidget {
   const NearbyPage({Key? key}) : super(key: key);
@@ -18,9 +20,13 @@ class _NearbyPageState extends State<NearbyPage> {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          const SliverAppBar(
+          SliverAppBar(
             title: Text('Restaurants'),
+            centerTitle: true,
             backgroundColor: colorPrimary,
+            floating: true,
+            snap: true,
+            expandedHeight: 200.0,
           ),
           SliverList(
               delegate: SliverChildBuilderDelegate(
