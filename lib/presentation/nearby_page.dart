@@ -27,10 +27,20 @@ class _NearbyPageState extends State<NearbyPage> {
             floating: true,
             snap: true,
             expandedHeight: 200.0,
+            stretch: true,
+            onStretchTrigger: () async {
+              print('Load new data!');
+              // await Server.requestNewData();
+            },
             flexibleSpace: FlexibleSpaceBar(
               title: Text('Restaurants'),
               centerTitle: true,
               collapseMode: CollapseMode.parallax,
+              stretchModes: <StretchMode>[
+                StretchMode.zoomBackground,
+                StretchMode.fadeTitle,
+                StretchMode.blurBackground,
+              ],
               background: DecoratedBox(
                 position: DecorationPosition.foreground,
                 decoration: BoxDecoration(
