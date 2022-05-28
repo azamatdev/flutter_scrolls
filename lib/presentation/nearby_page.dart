@@ -11,6 +11,8 @@ class NearbyPage extends StatefulWidget {
 }
 
 class _NearbyPageState extends State<NearbyPage> {
+  final restaurants = Server.getNearbyPlaces();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,14 +20,13 @@ class _NearbyPageState extends State<NearbyPage> {
         title: const Text('Restaurants'),
         backgroundColor: colorPrimary,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: Server.getNearbyPlaces().map((place) {
-            return ItemNearby(
-              place: place,
-            );
-          }).toList(),
-        ),
+      body: ListView.builder(
+        itemCount: restaurants.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ItemNearby(
+            place: restaurants[index],
+          );
+        },
       ),
     );
   }
